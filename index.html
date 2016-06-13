@@ -36,52 +36,53 @@
 						<li class="fragment"><em>Most</em> robust library.</li>
 						<li class="fragment">Steep learning curve - tutorials + exercises recommended!
 							<ul class="fragment">
-								<li>DashingD3Tutorials.</li>
-								<li>Let's Make A Bar Chart.</li>
+								<li><a href="https://www.dashingd3js.com/table-of-contents">DashingD3Tutorials</a>.</li>
+								<li><a href="https://bost.ocks.org/mike/bar/">Let's Make A Bar Chart</a>.</li>
 							</ul>
 						</li>
-						<li class="fragment">Simpler alternatives: Chart.js, plot.ly.</li>
+						<li class="fragment">Simpler alternatives: <a href="http://www.chartjs.org/">Chart.js</a>, <a href="https://plot.ly/">plot.ly</a>.</li>
 					</ul>
 				</section>
-				<section>
-					<section style="text-align:left;">
-						<h3>Example: Bar Chart</h3>
-						<!-- Insert bar chart here -->
-						<div id="barchart" style="font: 10px sans-serif; color: white"></div>
-					</section>
-					<section style="text-align:left;">
-						<h3>Example: Scatterplots</h3>
-						<!-- Insert scatterplot here -->
-					</section>
-					<section style="text-align:left";>
-						<h3>Example: Sankey Diagram</h3>
-						<!-- Insert sankey diagram -->
-					</section>
-					<section style="text-align:left;">
-						<h3>Example: Hierarchical Edge Bundling</h3>
-						<div id="edgebundling"></div>
-					</section>
+				<section style="text-align:left;">
+					<h3>Examples</h3>
+						<p><a href="http://bl.ocks.org/Caged/6476579">Bar Chart/Histogram</a></p>
+						<p><a href="https://bl.ocks.org/mbostock/3887118">Scatterplots</a></p>
+						<p><a href="http://bl.ocks.org/d3noob/raw/5028304/">Sankey Diagram</a></p>
+						<p><a href="http://bl.ocks.org/mbostock/4557698">Network Diagrams</a></p>
+						<p><a href="http://bl.ocks.org/mbostock/9943478">County Bubbles</a></p>
+						<p><a href="http://bl.ocks.org/mbostock/e6962a152275373f8504">Rainbow Tree Map</a></p>
+						<p><a href="http://bl.ocks.org/mbostock/7607999">Hierarchical Edge Bundling</a></h3>
 				</section>
 				<section style="text-align:left;">
-					<p>Code Sample</p>
-					<pre><code class="hljs" data-trim contenteditable>
-// 'Register' the data.
-.data([3, 1, 4, 1, 5, 2, 9]) 
-// Adds a div element for each entry.
-.append('div')	
-// Specifies the width of each div to be the data value
-.attr('width', function(d) {return d;}) 
+					<p>Code Sample For A Simple Bar Chart</p>
+					<pre style="width:100%"><code class="hljs" data-trim contenteditable>
+// Sets the scale for the x-axis
+var x = d3.scale.linear().domain([0, d3.max(data)]).range([0, width]);					
+// Sets the dimensions of the chart container
+var chart = d3.select(".chart")
+    .attr("width", width)
+    .attr("height", barHeight * data.length);
+// For each data entry, attaches a graphic object to the chart
+var bar = chart.selectAll("g")
+    .data(data)
+    .enter().append("g")
+    .attr("transform", 
+    	function(d, i) { return "translate(0," + i * barHeight + ")"; });
+// For each graphic object, appends a rectangle with width and height attributes
+bar.append("rect")
+    .attr("width", x)
+    .attr("height", barHeight - 1);
 					</code></pre>
 				</section>
 				<section style="text-align:left;">
 					<h2>Where is D3 used?</h2>
 					<ul>
-						<li>Researchers are interested in displaying data in their papers and journals.</li>
-						<li>Corporate institutions often want to display interactive data on their websites.</li>
-						<li>Data scientists need to be able to communicate their data to their clients/stakeholders.</li>
+						<li>Researchers display data in their papers and journals.</li>
+						<li>Corporate institutions display interactive data on their websites.</li>
+						<li>Data scientists communicate their data to clients/stakeholders.</li>
 					</li>
 					</ul>
-					<p>As web devs, chances are you'll need to interact with one or more of such professionals depending on the organisation you work for.</p>
+					<p>As web devs, you may interact with one or more of such professionals depending on the organisation you work for.</p>
 				</section>
 			</div>
 		</div>
