@@ -55,7 +55,7 @@
 				</section>
 				<section style="text-align:left;">
 					<h2>What is D3?</h2>
-					<p class="fragment">D3 is a Javascript library for manipulating documents based on data</p>
+					<p class="fragment">D3 is a Javascript library for manipulating documents based on data.</p>
 					<ul>
 						<li class="fragment"><em>Most</em> robust library.</li>
 						<li class="fragment">Steep learning curve - tutorials + exercises recommended!
@@ -87,7 +87,18 @@
 					</section>
 				</section>
 				<section style="text-align:left;">
-					<h2>Why should I learn D3?</h2>
+					<p>Code Sample</p>
+					<pre><code class="hljs" data-trim contenteditable>
+// 'Register' the data.
+.data([3, 1, 4, 1, 5, 2, 9]) 
+// Adds a div element for each entry.
+.append('div')	
+// Specifies the width of each div to be the data value
+.attr('width', function(d) {return d;}) 
+					</code></pre>
+				</section>
+				<section style="text-align:left;">
+					<h2>Where is D3 used?</h2>
 					<ul>
 						<li>Researchers are interested in displaying data in their papers and journals.</li>
 						<li>Corporate institutions often want to display interactive data on their websites.</li>
@@ -95,30 +106,6 @@
 					</li>
 					</ul>
 					<p>As web devs, chances are you'll need to interact with one or more of such professionals depending on the organisation you work for.</p>
-				</section>
-				<section>
-					<h2>What advantages does D3 offer?</h2>
-					<ul>
-						<li></li>
-					</ul>
-				</section>
-				<section>
-					<p>Let's say I want to make a bar chart.</p>
-					<p class="fragment">Here's some data! <br /> [3, 1, 4, 1, 5, 2, 9]</p>
-				</section>
-				<section>
-						<p>Instead of manually iterating through each data element:</p>
-						<pre><code class="hljs" data-trim contenteditable>
-for(i=0; i <= data.length; i++) {
-	graph.appendChild(document.createElement("div")).class
-}
-						</code></pre>
-					<p>You can just write</p>
-					<pre><code class="hljs" data-trim contenteditable>
-.data(data)
-.append('div')
-.attr('width', function(d) {return d;})
-					</code></pre>
 				</section>
 			</div>
 		</div>
