@@ -11,28 +11,6 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- D3.js charts styles -->
-		<style>
-		.axis path,
-		.axis line {
-		  fill: none;
-		  stroke: #FFF;
-		  shape-rendering: crispEdges;
-		}
-
-		.bar {
-		  fill: orange;
-		}
-
-		.bar:hover {
-		  fill: orangered;
-		}
-
-		.x.axis path {
-		  display: none;
-		}
-		</style>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -44,8 +22,6 @@
 		
 	</head>
 	<body>
-
-	<script src="js/d3.min.js"></script>
 		<div class="reveal">
 			<div class="slides">
 				<section>
@@ -82,8 +58,8 @@
 						<!-- Insert sankey diagram -->
 					</section>
 					<section style="text-align:left;">
-						<h3>Example: Interactive World Map</h3>
-						<!-- Insert World Map diagram here -->
+						<h3>Example: Hierarchical Edge Bundling</h3>
+						<div id="edgebundling"></div>
 					</section>
 				</section>
 				<section style="text-align:left;">
@@ -127,7 +103,5 @@
 				]
 			});
 		</script>
-		<!-- D3.js Charts -->
-		<script src="js/barchart.js"></script>
 	</body>
 </html>
